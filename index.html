@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>img.lu — Pure WebP Compression</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.2/dist/browser-image-compression.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body class="dark-theme">
+    <div id="bg-stat-ghost" class="ghost-typography">00</div>
+    <nav class="glass">
+        <div class="nav-content">
+            <div class="brand-wrapper">
+                <div class="logo-row">
+                    <div class="logo">img.lu</div>
+                    <span class="badge-pro">Compress</span>
+                </div>
+            </div>
+
+            <div class="nav-stats" id="nav-stats">0.00 MB saved</div>
+            <button id="theme-toggle" class="icon-btn">
+    <svg class="theme-icon" viewBox="0 0 24 24">
+        <circle class="sun" cx="12" cy="12" r="5"/>
+        <g class="rays">
+            <line x1="12" y1="1" x2="12" y2="4"/>
+            <line x1="12" y1="20" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="6.34" y2="6.34"/>
+            <line x1="17.66" y1="17.66" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="4" y2="12"/>
+            <line x1="20" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="6.34" y2="17.66"/>
+            <line x1="17.66" y1="6.34" x2="19.78" y2="4.22"/>
+        </g>
+        <path class="moon" d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/>
+    </svg>
+</button>
+        </div>
+
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="upload-area" id="drop-zone">
+                <div class="glass-inner">
+                    <div class="upload-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                    </div>
+                    <h1>Lighter images.</h1>
+                    <p>Drag and drop to shrink your files instantly to WebP</p>
+                    
+                    <div class="options-pill" onclick="event.stopPropagation()">
+                        <select id="quality-lvl">
+                            <option value="0.8">High Quality - 0.8</option>
+                            <option value="0.6" selected>Balanced - 0.6</option>
+                            <option value="0.3">Extrem - 0.3</option>
+                        </select>
+                        <div class="divider"></div>
+                        <label>
+                            <input type="checkbox" id="resize-check" checked> resize to max 1600px
+                        </label>
+                    </div>
+                </div>
+                <input type="file" id="file-input" accept="image/*" multiple hidden>
+            </div>
+        </section>
+
+        <section class="results-container">
+            <div class="results-header" id="results-header" style="display: none;">
+                <h3>Processed Files</h3>
+                <button id="download-all" class="btn-primary">Download All (.zip)</button>
+            </div>
+            <div id="grid" class="grid"></div>
+        </section>
+    </main>
+
+    <footer class="minimal-footer">
+        <div class="privacy-pill">
+    <strong>Secured like a Luxembourgish Vault.</strong> 
+    GDPR compliant by design. Even our Data Protection Officer couldn't find a flaw.
+</div>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- 100% privacy-first analytics -->
+    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+
+</body>
+</html>
